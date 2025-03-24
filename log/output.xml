@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-19T10:07:46.417994" rpa="false" schemaversion="5">
+<suite id="s1" name="Web" source="C:\Users\italo.costa\Desktop\Quality Eagles\scripts_robot\web.robot">
+<test id="s1-t1" name="TC08 - Lista de Cadastro de Usuários com Sucesso" line="122">
+<kw name="Realizar Login">
+<kw name="Abrir Navegador">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-19T10:07:47.498894" level="INFO">Opening browser 'Chrome' to base url 'https://quality-eagles-front.qacoders.dev.br/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-19T10:07:47.498436" elapsed="5.738574"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-19T10:07:53.237283" elapsed="0.060798"/>
+</kw>
+<status status="PASS" start="2025-03-19T10:07:47.496907" elapsed="5.802309"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-19T10:07:53.301553" level="INFO">Typing text 'sysadmin@qacoders.com' into text field 'css=input[id=email]'.</msg>
+<arg>css=${input_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-19T10:07:53.300129" elapsed="0.329016"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-19T10:07:53.630098" level="INFO">Typing text '1234@Test' into text field 'css=input[id=password]'.</msg>
+<arg>css=${input_senha}</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-19T10:07:53.629439" elapsed="0.148990"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-19T10:07:53.779304" level="INFO">Clicking button 'css=button[id=login]'.</msg>
+<arg>css=${btn_entrar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-19T10:07:53.778779" elapsed="0.159512"/>
+</kw>
+<arg>email=sysadmin@qacoders.com</arg>
+<arg>senha=1234@Test</arg>
+<doc>Keyword utilizada para realizar login, é obrigatório 2 argumentos: [email] e [senha]</doc>
+<status status="PASS" start="2025-03-19T10:07:47.496320" elapsed="6.442138"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=${div_cadastros}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-19T10:07:53.938892" elapsed="0.745533"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-19T10:07:54.685598" level="INFO">Clicking element 'css=div[id=Cadastros]'.</msg>
+<arg>css=${div_cadastros}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-19T10:07:54.685072" elapsed="0.189730"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=${btn_usuarios}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-19T10:07:54.875562" elapsed="0.053189"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-19T10:07:54.930569" level="INFO">Clicking element 'css=div[id=Usuários]'.</msg>
+<arg>css=${btn_usuarios}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-19T10:07:54.929534" elapsed="0.212389"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-19T10:07:58.144055" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-19T10:07:55.142691" elapsed="3.001543"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=${lista_usuarios}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-19T10:07:58.144730" elapsed="0.033068"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-19T10:07:58.304141" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-19T10:07:58.178210" elapsed="0.126157"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-19T10:07:58.456684" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-1.png"&gt;&lt;img src="selenium-element-screenshot-1.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>css=${lista_usuarios}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2025-03-19T10:07:58.304986" elapsed="0.151924"/>
+</kw>
+<kw name="Fechar Navegador">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-19T10:07:58.458186" elapsed="2.757136"/>
+</kw>
+<status status="PASS" start="2025-03-19T10:07:58.457697" elapsed="2.758025"/>
+</kw>
+<status status="PASS" start="2025-03-19T10:07:47.495084" elapsed="13.721665"/>
+</test>
+<status status="PASS" start="2025-03-19T10:07:46.421429" elapsed="14.798340"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Web" id="s1" pass="1" fail="0" skip="0">Web</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
