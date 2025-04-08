@@ -41,9 +41,9 @@ TC05 - Cadastro de Usuário com Sucesso
     ${resposta}    Create User
     Set Global Variable    ${mailUser}    ${resposta['mail']}
     Set Global Variable    ${idUserCreated}    ${resposta['_id']}
-    #Log To Console    message=ID do usuario criado: ${idUserCreated}
-    #Log To Console    message=Nome do usuario criado: ${resposta['fullName']}
-    #Log To Console    message=Email do usuario criado: ${mailUser}
+    Log To Console    message=ID do usuario criado: ${idUserCreated}
+    Log To Console    message=Nome do usuario criado: ${resposta['fullName']}
+    Log To Console    message=Email do usuario criado: ${mailUser}
 
 TC06 - Login com Sucesso USER
     ${resposta}    Realizar Login    email=${mailUser}    senha=1234@Test
@@ -97,7 +97,7 @@ TC14 - Listar Empresas com Sucesso
 
 TC15 - Atualizar Dados da Empresa com Sucesso
     ${resposta}    Update Company    id_company=${idCompanyCreated}
-    #Log To Console    message=Retorno Atualização da Empresa: ${resposta}
+    Log To Console    message=Retorno Atualização da Empresa: ${resposta}
     Should Be Equal    Companhia atualizada com sucesso.    ${resposta['msg']}
 
 TC16 - Atualizar Dados da Empresa utilizando token invalido
