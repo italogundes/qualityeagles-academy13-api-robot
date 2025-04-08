@@ -130,7 +130,7 @@ Criar Sessao
     Create Session    alias=eagles    url=${baseUrl}    headers=${headers}    verify=True
 
 Pegar Token
-    [Documentation]    Request usada para pegar o token.
+    [Documentation]    Request usada para pegar o token..
     [Arguments]    ${email}    ${senha}
     ${body}    Create Dictionary
     ...    mail=${email}
